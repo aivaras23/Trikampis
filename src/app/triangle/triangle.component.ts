@@ -34,7 +34,15 @@ export class TriangleComponent {
            this.errorMsg = null;
         }
         else {
-          this.errorMsg = 'Neteisingas trikampis';
+          if(!(this.a + this.b > this.c)) {
+            this.errorMsg = 'Neteisingas trikampis: A + B yra mažiau negu C';
+          }
+          if(!(this.a + this.c > this.b)) {
+            this.errorMsg = 'Neteisingas trikampis, A + C yra mažiau negu B';
+          }
+            if(!(this.b + this.c > this.a)) {
+            this.errorMsg = 'Neteisingas trikampis, B + C yra mažiau negu A';
+          }
           this.perimetroSuma = null;
           this.plotoSuma = null;
         }
