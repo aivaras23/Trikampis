@@ -1,0 +1,18 @@
+<div class="container mt-4 col-md-5 p-4">
+    <div class="card-head">
+        <h1 class="text-center color-info fw-bold">Trikampio ploto skaičiuoklė</h1>
+    </div>
+    <div class="d-flex flex-column card-body mt-4 gap-2">
+        <input class="form-control" type="number" placeholder="Įveskite kraštinė A" name="a" [(ngModel)]="a">
+        <input class="form-control" type="number" placeholder="Įveskite kraštinė B" name="b" [(ngModel)]="b">
+        <input class="form-control" type="number" placeholder="Įveskite kraštinė C" name="c" [(ngModel)]="c">
+        <div class="row justify-content-left mx-1">
+            <button class="btn btn-primary mt-3 w-100" (click)="calc()" [disabled]="a === null || b === null || c === null">Skaičiuoti</button>
+        </div>
+    </div>
+    <div class="container d-flex flex-column gap-1 mt-3">
+        <span class="alert alert-danger" *ngIf="errorMsg"> {{ errorMsg }}</span>
+        <span class="alert alert-success" *ngIf="perimetroSuma!=null">Perimetras: {{ perimetroSuma }} </span>
+        <span class="alert alert-success" *ngIf="plotoSuma!=null">Plotas: {{ plotoSuma }}</span>
+    </div>
+</div>
